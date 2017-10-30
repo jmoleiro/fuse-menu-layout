@@ -1,0 +1,38 @@
+<ClientPanel Dock="Fill" ux:Class="standard_layout" Padding="0" Margin="0" TransformOrigin="HorizontalBoxCenter" Background="#fff">
+    <!-- Inner classes -->
+    <Switch ux:Name="menu_open" Value="false" X="-500" />
+    <!-- Inner classes -->
+
+    <WhileWindowPortrait>
+        <Menu ux:Name="MyMenu" menu_open="menu_open" Width="300" Alignment="Left" X="0" />
+        <Change Target="Content.Column" Value="0" />
+        <WhileTrue Source="menu_open">
+            <Change MyMenu.X="0" Duration="0.2" />
+            <Change sbFade.Opacity="1" Duration="0.2" />
+        </WhileTrue>
+        <WhileFalse Source="menu_open">
+            <Change MyMenu.X="-300" Duration="0.2" />
+            <Change sbFade.Opacity="0" Duration="0.2" />
+        </WhileFalse>
+    </WhileWindowPortrait>    
+    <WhileWindowLandscape>
+        <Change Target="grid.Columns" Value="1*,2*" />
+        <Change Target="Content.Column" Value="1" />
+        <WhileTablet>
+            <Change Target="main.columns" Value="3" />
+        </WhileTablet>
+    </WhileWindowLandscape>
+    <Grid ux:Name="grid" Columns="1*">
+        <Rectangle ux:Name="sbFade" Layer="Overlay" Color="#0005" Opacity="0" HitTestMode="None">
+            <Clicked>
+                <Toggle Target="menu_open" />
+            </Clicked>    
+        </Rectangle>
+        <WhileWindowLandscape>
+            <Menu menu_open="menu_open" Column="0" />
+        </WhileWindowLandscape>
+        <Panel Column="1" ux:Name="Content" Color="#fff">
+            <main_data ux:Name="main" columns="2" menu_open="menu_open" Dock="Fill" Alignment="Default" />
+        </Panel>
+    </Grid>
+</ClientPanel>

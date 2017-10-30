@@ -1,0 +1,45 @@
+    <StackPanel ux:Class="Menu" ux:Name="iMenu" Column="0" Background="#252525">
+        <Switch ux:Dependency="menu_open" />
+        <WhileWindowPortrait>
+            <Panel Dock="Top" Height="40" Alignment="Top">
+            <Text Color="#e1b630" Padding="5" FontSize="22" Margin="10,11,0,0" Alignment="Right">X</Text>
+            <Clicked>
+                <Toggle Target="menu_open" />
+            </Clicked>
+            </Panel>
+        </WhileWindowPortrait>
+        <WhileWindowLandscape>
+            <Panel Dock="Top" Height="40" Alignment="Top">
+            </Panel>
+        </WhileWindowLandscape>
+        <Button>
+            <Text Alignment="Center" Padding="7" Color="#e1b630" FontSize="25">
+                Option 1
+            </Text>
+            <Clicked>
+                <WhileWindowPortrait>
+                    <Toggle Target="menu_open" />
+                </WhileWindowPortrait>
+            </Clicked>
+        </Button>
+        <Button>
+            <Text Alignment="Center" Padding="7" Color="#e1b630" FontSize="25">
+                Option 2
+            </Text>
+            <Clicked>
+                <WhileWindowPortrait>
+                    <Toggle Target="menu_open" />
+                </WhileWindowPortrait>
+            </Clicked>
+        </Button>
+        <Button>
+            <Text Alignment="Center" Padding="7" Color="#e1b630" FontSize="25">
+                Option 3
+            </Text>
+            <Clicked>
+                <WhileWindowPortrait>
+                    <Toggle Target="menu_open" />
+                </WhileWindowPortrait>
+            </Clicked>
+        </Button>
+    </StackPanel>

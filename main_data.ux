@@ -1,0 +1,28 @@
+    <StackPanel ux:Class="main_data" Dock="Fill" Color="#fff">
+        <Switch ux:Dependency="menu_open" />
+        <int ux:Property="columns" />
+        <Panel Dock="Top" Color="#000" Height="55" Padding="5,5,5,5" Alignment="Top">
+            <WhileWindowPortrait>
+                <Panel Margin="0, 0, 0, 0" Alignment="Left" Width="35" Height="30" Padding="0, 0, 0, 0">
+                    <Text Color="#F0C134" Padding="5" FontSize="22" Alignment="TopLeft" Margin="10, 4, 0, 0" Width="100" TextAlignment="Left">Menu</Text>
+                    <Clicked>
+                        <Toggle Target="menu_open" />
+                    </Clicked>
+                </Panel>
+            </WhileWindowPortrait>
+            <Panel Alignment="Center">
+                <Text Value="Title" Width="120" Alignment="Center" Height="35" X="0" TextAlignment="Center" Color="#F3FFEE" FontSize="32" />
+            </Panel>
+        </Panel>
+        <Panel DockPanel.Dock="Fill" Width="100%" Height="100%" Padding="20">
+          <StackPanel Margin="5,10,5,5" Alignment="Default">
+            <ColumnLayout ux:Name="Cols" ColumnCount="{Property columns}" />
+            <Rectangle Color="#808080" Height="40" Margin="0,0,5,5" />
+            <Rectangle Color="#808080" Height="40" Margin="0,0,5,5" />
+            <Rectangle Color="#808080" Height="40" Margin="0,0,5,5" />
+            <Rectangle Color="#808080" Height="40" Margin="0,0,5,5" />
+            <Rectangle Color="#808080" Height="40" Margin="0,0,5,5" />
+            <Rectangle Color="#808080" Height="40" Margin="0,0,5,5" />
+          </StackPanel>
+        </Panel>
+    </StackPanel>

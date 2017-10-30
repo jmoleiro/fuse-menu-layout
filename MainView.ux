@@ -1,0 +1,7 @@
+<App>
+    <WhileWindowSize ux:Class="WhileTablet" GreaterThan="499,1" />
+    <WhileWindowSize ux:Class="WhileNotTablet" LessThan="500,1" />
+    <JavaScript File="main.js" />
+    <standard_layout />
+</App>
+
